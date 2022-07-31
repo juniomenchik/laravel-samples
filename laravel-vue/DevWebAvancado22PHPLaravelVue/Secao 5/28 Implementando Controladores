@@ -1,0 +1,14 @@
+    Para pedir para o artisan criar um controllador 
+
+        $php artisan make:controller PrincipalController
+
+
+    Action sao os metodos dentro de um controlador
+    que estão associados a uma rota
+
+    Para que a route aponte para uma funcao dentro do controlador
+
+        routes/web.php
+        Route::get('/', [\App\Http\Controllers\PrincipalController::class,'principal']);
+
+        
