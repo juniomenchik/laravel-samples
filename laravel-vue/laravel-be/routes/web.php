@@ -19,6 +19,6 @@ Route::get('/sobre-nos', [\App\Http\Controllers\SobreNosController::class,'sobre
 
 Route::get('/contato', [\App\Http\Controllers\ContatoController::class,'contato']);
 
-Route::get('/contato/{nome}/{sobrenome}', function(string $nome, string $sobrenome){
+Route::get('/contato/{nome}/{sobrenome?}', function(string $nome, string $sobrenome = 'sobrenome indefinido'){
     echo 'Prazer, senhor/a '.$nome. ' '.$sobrenome;
 });
