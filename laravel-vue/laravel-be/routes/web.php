@@ -19,6 +19,10 @@ Route::get('/sobre-nos', [\App\Http\Controllers\SobreNosController::class,'sobre
 
 Route::get('/contato', [\App\Http\Controllers\ContatoController::class,'contato']);
 
-Route::get('/contato/{nome}/{sobrenome?}', function(string $nome, string $sobrenome = 'sobrenome indefinido'){
-    echo 'Prazer, senhor/a '.$nome. ' '.$sobrenome;
-});
+Route::get('/contato/{nome}/{categoria_id}',
+    function(
+        string $nome = 'Desconhecido',
+        int $categoria_id = 1 // 1 - 'Informacao'
+    ){
+    echo 'Estamos Aqui: '.$nome. ' ----- '.$categoria_id;
+})->where('categoria_id','[0-9]+')->where('nome','[A-Za-z]+');
