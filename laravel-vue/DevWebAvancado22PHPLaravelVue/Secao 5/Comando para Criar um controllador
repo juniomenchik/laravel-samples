@@ -1,5 +1,4 @@
     Para pedir para o artisan criar um controllador 
-
         $php artisan make:controller PrincipalController
 
 
