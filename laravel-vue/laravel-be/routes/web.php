@@ -24,3 +24,8 @@ Route::get('/rota2', function(){
     })->name('site.rota2');
 
 //Route::redirect('/rota2','/rota1');
+
+Route::fallback(function(){
+    echo 'A Rota acessada nao existe,
+        <a href="/"> clique aqui</a> para ser direcionado a pagina principal';
+});
