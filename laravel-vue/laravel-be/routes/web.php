@@ -9,7 +9,7 @@ Route::get('/login', function(){ return 'Login';})->name('site.login');
 
 // Privada
 
-Route::get('/teste/{p1}/{p2}',[\App\Http\Controllers\TesteController::class,'teste'])->name('teste');
+Route::get('/teste/{p1}/{p2}',[\App\Http\Controllers\TesteController::class,'teste'])->name('site.teste');
 
 Route::prefix('app')->group(function(){
     Route::get('/clientes', function(){ return 'Clientes';})->name('app.clientes');
