@@ -38,7 +38,23 @@
     <br>
     @isset($fornecedores[0]['cnpj'])
     CNPJ = {{$fornecedores[0]['cnpj']}}
+        @empty($fornecedores[0]['cnpj'])
+        - Vazio
+        @endempty
+
     @endisset
+
 </h3>
+
+
+<h1>
+        {{--
+    "?? " definir valor padrao.
+--}}
+    CNPJ: {{$fornecedores[0]['cnpj'] ?? 'No have cnpj'}}
+
+</h1>
+
+
 
 @endisset
