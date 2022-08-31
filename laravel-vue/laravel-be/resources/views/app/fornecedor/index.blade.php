@@ -13,12 +13,32 @@
         */
         echo 'Texto de teste';
 
-@endphp
+        /*
+        if(!<>)
+        */
 
-@if (count($fornecedores) > 0 && count($fornecedores) < 10)
-    <h3>Existem alguns Fornecedores Cadastrados</h3>
-@elseif (count($fornecedores) > 10)
-    <h3>Existem vários Fornecedores Cadastrados</h3>
-@else
-    <h3>Ainda não existem Fornecedores Cadastrados</h3>
-@endif
+@endphp
+{{--
+    Para Mostrar um Array no browser
+        @dd($fornecedores)
+--}}
+
+@isset($fornecedores)
+
+<h3>
+    Fornecedor: {{ $fornecedores[0]['nome']}} <br>
+    Status: {{ $fornecedores[0]['status']}} <br>
+    @if ( !($fornecedores[0]['status']=='S') )
+    Fornecedor esta inativo
+    @endif
+    <br>
+    @unless($fornecedores[0]['status']=='S')
+    Fornecedor esta inativo
+    @endunless
+    <br>
+    @isset($fornecedores[0]['cnpj'])
+    CNPJ = {{$fornecedores[0]['cnpj']}}
+    @endisset
+</h3>
+
+@endisset
