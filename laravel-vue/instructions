@@ -21,3 +21,6 @@
             Para iniciar o a aplicacao pelo servidor embutido do php
                 $php artisan serve
                                     --port=9000   
+
+
+sudo php artisan serve --host=192.168.100.126 --port=80
