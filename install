@@ -20,3 +20,7 @@ composer install --ignore-platform-reqs
 sudo php artisan serve --host=192.168.100.135 --port=80
 
 php artisan key:generate
+
+
+sudo a2ensite lara-app.com.conf
+sudo systemctl restart apache2
